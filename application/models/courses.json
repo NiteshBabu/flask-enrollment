@@ -1,0 +1,37 @@
+[
+  {
+    "courseID": "5555",
+    "title": "Python",
+    "description": "Intro To Python",
+    "credits": 4,
+    "term": "Fall"
+  },
+  {
+    "courseID": "1111",
+    "title": "PHP 101",
+    "description": "Intro to PHP",
+    "credits": 3,
+    "term": "Fall, Spring"
+  },
+  {
+    "courseID": "2222",
+    "title": "Node",
+    "description": "Intro to Node Programming",
+    "credits": 4,
+    "term": "Spring"
+  },
+  {
+    "courseID": "3333",
+    "title": "SQL",
+    "description": "Intro To SQL Programming",
+    "credits": 3,
+    "term": "Fall"
+  },
+  {
+    "courseID": "4444",
+    "title": "React",
+    "description": "Intro to React",
+    "credits": 3,
+    "term": "Fall, Spring"
+  }
+]
