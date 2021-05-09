@@ -39,8 +39,8 @@ hr {
     background-color: darkblue;
     border: 0 none;
 }
-
-input[type=text], input[type=password] {
+/* 
+input[type=text]{
     width: 100%;
     padding: 15px;
     margin: 5px 0 22px 0;
@@ -51,8 +51,8 @@ input[type=text], input[type=password] {
 
 input[type=text]:focus, input[type=password]:focus {
     background-color: #ddd;
-    outline: none;
-}
+    outline: none !important;
+} */
 
 .top-container {
     background: #ccc;

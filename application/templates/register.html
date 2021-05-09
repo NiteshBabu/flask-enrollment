@@ -2,20 +2,63 @@
     {% extends "layout.html" %}
    
     {% block content %}
-    <h2>New User Registration</h2>
+    <h2 class="text-center">{{ title }}</h2>
 
     <div class="container">
-        <form name="register" action="register.php" method="get">
-            <label for="username"><b>Username</b></label>
-            <input type="text" placeholder="Enter Username" name="username" required>
-            <br>
-            <label for="email"><b>Email</b></label>
-            <input type="text" placeholder="Enter Email" name="email" required>
-            <br>
-            <label for="password"><b>Password</b></label>
-            <input type="password" placeholder="Enter Password" name="password" required>
-            <br class="clear">
-            <input class="btn-submit" type="submit" name="submit">
+        <form name="register" action="" method="post" class="col-sm-6 p-2  mx-auto">
+            <div class="form-group">
+                <label>
+                    {{ form.email.label }}
+                </label>
+                    {{ form.email(class="form-control") }}
+                
+                {% for err in form.email.errors %}
+                    <p class="text-danger">{{ err }}</p>
+                {% endfor %}
+            </div>
+            <div class="form-group">
+                <label>
+                    {{ form.password.label }}
+                </label>
+                {{ form.password(class="form-control") }}
+                
+                {% for err in form.password.errors %}
+                    <p class="text-danger">{{ err }}</p>
+                {% endfor %}
+            </div>
+            <div class="form-group">
+                <label>
+                    {{ form.confirm_password.label }}
+                </label>
+                {{ form.confirm_password(class="form-control") }}
+                
+                {% for err in form.confirm_password.errors %}
+                    <p class="text-danger">{{ err }}</p>
+                {% endfor %}
+            </div>
+            <div class="form-group">
+                <label>
+                    {{ form.first_name.label }}
+                </label>
+                {{ form.first_name(class="form-control") }}
+                
+                {% for err in form.first_name.errors %}
+                    <p class="text-danger">{{ err }}</p>
+                {% endfor %}
+            </div>
+            <div class="form-group">
+                <label>
+                    {{ form.last_name.label }}
+                </label>
+                {{ form.last_name(class="form-control") }}
+                
+                {% for err in form.last_name.errors %}
+                    <p class="text-danger">{{ err }}</p>
+                {% endfor %}
+            </div>
+            <div class="col-sm-12 text-center">
+                <button class="btn btn-sm btn-success">Submit</button>
+            </div>
         </form>
     </div>
     {% endblock %}
