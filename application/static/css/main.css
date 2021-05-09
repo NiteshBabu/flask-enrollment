@@ -65,6 +65,9 @@ input[type=text]:focus, input[type=password]:focus {
     border-top:2px solid #0f0f0f;
     /* position:absolute; */
     bottom:0;
+    position: fixed;
+    bottom:0px;
+    left: 0px;
 }
 
 .container-term {
@@ -75,11 +78,10 @@ input[type=text]:focus, input[type=password]:focus {
 }
 footer {
     text-align: center;
-    height: 50px;
+    height: 100px;
     color: white;
     padding: 5px;
     margin-top: 10px;
-    bottom: 0px;
 }
 
 .btn-submit {
