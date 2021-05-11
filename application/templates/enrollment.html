@@ -1,14 +1,35 @@
-{% extends "layout.html" %}
-
-{% block content %}
-    <div class="row">
-        <div class="col-md-12 text-center">
-            <h1>You are enrolled in:</h1>
-
-            <p>Course ID: {{ data.courseID }}</p>
-            <p>Course Title: {{ data.title }}</p>
-            <p>Course Term: {{ data.term }}</p>
-
-        </div>
-    </div>
+{% extends "layout.html" %} {% block content %}
+<div class="row">
+	<div class="col-md-12 text-center">
+		{% if not classes %}
+		<h1>You are not enrolled in any courses !!</h1>
+		{% else %}
+		<h1>You are enrolled in:</h1>
+		<div>
+			<table class="table table-hover">
+				<thead>
+					<tr>
+						<th scope="col">Course ID</th>
+						<th scope="col">Title</th>
+						<th scope="col">Description</th>
+						<th scope="col">Credits</th>
+						<th scope="col">Term</th>
+					</tr>
+				</thead>
+				<tbody>
+					{% for class in classes %}
+					<tr>
+						<td scope="row">{{ class["course_id"] }}</td>
+						<td>{{ class["title"] }}</td>
+						<td>{{ class["description"] }}</td>
+						<td>{{ class["credits"] }}</td>
+						<td>{{ class["term"] }}</td>
+					</tr>
+					{% endfor %}
+				</tbody>
+			</table>
+		</div>
+		{% endif %}
+	</div>
+</div>
 {% endblock %}

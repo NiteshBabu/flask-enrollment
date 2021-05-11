@@ -6,7 +6,7 @@ class User(db.Document):
     first_name  =   db.StringField(max_length=50)
     last_name   =   db.StringField(max_length=50)
     email       =   db.StringField(max_length=50, unique=True)
-    password    =   db.StringField(max_length=30)
+    password    =   db.StringField(max_length=100)
 
     def set_password(self, password):
         self.password = generate_password_hash(password)
@@ -16,7 +16,7 @@ class User(db.Document):
 
 
 class Course(db.Document):
-    course_id          =   db.StringField(max_length=10, unique=True)
+    course_id   =   db.StringField(max_length=10, unique=True)
     title       =   db.StringField(max_length=50)
     description =   db.StringField(max_length=200)
     credits     =   db.IntField()

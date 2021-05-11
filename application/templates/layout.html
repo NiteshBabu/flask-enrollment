@@ -13,7 +13,9 @@
 </div>
 <div class="container">
     {% include "includes/nav.html" %}
-
+    {% if session["username"] %}
+        <p class="text-right text-muted">Welcome, {{session["username"]}} !</p>
+    {% endif %}
     {% with messages = get_flashed_messages(with_categories=true) %}
         {% if messages %}
             {% for category, msg in messages %}

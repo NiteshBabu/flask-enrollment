@@ -22,5 +22,14 @@ class RegistrationForm(FlaskForm):
   submit = SubmitField("Register")
 
   def validate_email(self, email):
-    if User.objects(email=email.data):
+    if User.objects(email=email.data).first():
       raise ValidationError('Email already in use, Try other one !!')
+
+
+class NewCourseForm(FlaskForm):
+  course_id = StringField("Course ID", validators=[DataRequired(), Length(min=4, max=10)])
+  title = StringField("Title", validators=[DataRequired(), Length(min=2, max=10)])
+  description = StringField("Description", validators=[DataRequired(), Length(min=10, max=100)])
+  credits = StringField("Credits", validators=[DataRequired()])
+  term = StringField("Term", validators=[DataRequired(), Length(min=3, max=10)])
+  submit = SubmitField("Submit")
